@@ -48,5 +48,7 @@ export default {
 <style>
 * {
   margin: 0;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
 }
 </style>
