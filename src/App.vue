@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div v-if="token">
-      <Player />
+    <div v-if="$store.state.token">
+      <Player spotify="{spotify}" />
     </div>
     <div v-else>
       <Login />
@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import Player from "./components/Player";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
+import { store } from "./store/store";
 
 const spotify = new SpotifyWebApi();
 
@@ -21,27 +22,22 @@ export default {
   name: "app",
   components: { Login, Player },
   data: function () {
-    return { token: null };
+    return { user: null };
   },
   created() {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const xtoken = hash.access_token;
     if (xtoken) {
-      this.token = xtoken;
-
+      store.commit("setToken", xtoken);
       spotify.setAccessToken(xtoken);
       spotify.getMe().then((user) => {
         console.log(user);
+        store.commit("setUser", user);
       });
     }
-    console.log("I have a token", this.token);
   },
-  // methods: {
-  //   logOut: function () {
-  //     this.token = null;
-  //   },
-  // },
+  computed: {},
 };
 </script>
 
