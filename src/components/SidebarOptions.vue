@@ -4,13 +4,18 @@
     <h4 class="sidebar_title">{{title}}</h4>
   </div>
   <div class="sidebar_option" v-else>
-    <p class="sidebar_title">{{title}}</p>
+    <ul id="v-for-object" class="demo">
+      <li v-for="value in playLists.items">{{ value.name }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   props: ["title", "Icon"],
+
+  computed: { ...mapState(["playLists"]) },
 };
 </script>
 

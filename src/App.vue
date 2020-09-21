@@ -21,19 +21,22 @@ const spotify = new SpotifyWebApi();
 export default {
   name: "app",
   components: { Login, Player },
-  data: function () {
-    return { user: null };
-  },
+
   created() {
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const xtoken = hash.access_token;
+    console.log(xtoken);
     if (xtoken) {
       store.commit("setToken", xtoken);
       spotify.setAccessToken(xtoken);
       spotify.getMe().then((user) => {
         console.log(user);
         store.commit("setUser", user);
+      });
+      spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists.items[0].name);
+        store.commit("setPlaylists", playlists);
       });
     }
   },
