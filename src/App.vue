@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style>
+body::-webkit-scrollbar {
+  display: none;
+}
 * {
   margin: 0;
   font-family: proxima-nova, sans-serif;

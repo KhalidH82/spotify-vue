@@ -4,8 +4,12 @@
     <h4 class="sidebar_title">{{title}}</h4>
   </div>
   <div class="sidebar_option" v-else>
-    <ul id="v-for-object" class="demo">
-      <li v-for="value in playLists.items">{{ value.name }}</li>
+    <ul class="sidebar_playist">
+      <li
+        class="sidebar_option sidebar_playlist_title"
+        v-for="playlist in playLists.items"
+        v-bind:key="playlist.name"
+      >{{ playlist.name }}</li>
     </ul>
   </div>
 </template>
@@ -33,8 +37,13 @@ export default {
   color: white;
 }
 
-.sidebar_title {
-  padding-left: 15px;
+.sidebar_playlist {
+  margin-top: 25px;
+}
+
+.sidebar_playlist_title {
+  margin-left: -30px;
+  padding-top: 5px;
 }
 .sidebar_icon {
   font-size: 1.5em;

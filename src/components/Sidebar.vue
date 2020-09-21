@@ -12,9 +12,6 @@
     <strong class="sidebar_title">PLAYLISTS</strong>
     <hr />
     <SidebarOptions />
-
-    <!-- <SidebarOptions title="Rock" />
-    <SidebarOptions title="RnB" />-->
   </div>
 </template>
 
@@ -24,11 +21,6 @@ export default {
   components: {
     SidebarOptions,
   },
-  // computed: {
-  //   play() {
-  //     return this.$store.getters.getPlaylists;
-  //   },
-  // },
 };
 </script>
 

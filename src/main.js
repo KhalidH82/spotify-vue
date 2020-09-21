@@ -6,10 +6,24 @@ import {
   faHome,
   faSearch,
   faBookOpen,
+  faPlayCircle,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft,
+  faRandom,
+  faRedo,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faHome, faSearch, faBookOpen);
+library.add(
+  faHome,
+  faSearch,
+  faBookOpen,
+  faPlayCircle,
+  faArrowAltCircleRight,
+  faArrowAltCircleLeft,
+  faRandom,
+  faRedo
+);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;
 
