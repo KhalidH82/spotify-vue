@@ -11,6 +11,10 @@ import {
   faArrowAltCircleLeft,
   faRandom,
   faRedo,
+  faVolumeDown,
+  faStream,
+  faHeart,
+  faEllipsisH,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -22,7 +26,11 @@ library.add(
   faArrowAltCircleRight,
   faArrowAltCircleLeft,
   faRandom,
-  faRedo
+  faRedo,
+  faVolumeDown,
+  faStream,
+  faHeart,
+  faEllipsisH
 );
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false;

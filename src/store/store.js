@@ -10,6 +10,7 @@ export const store = new Vuex.Store({
     playing: false,
     item: null,
     token: null,
+    recent_playlists: null,
   },
   mutations: {
     setUser(state, user) {
@@ -24,6 +25,10 @@ export const store = new Vuex.Store({
     setPlaylists(state, playlists) {
       console.log("setting playlists", playlists);
       state.playLists = playlists;
+    },
+    setRecent(state, response) {
+      console.log("setting recent", response);
+      state.recent_playlists = response;
     },
   },
   getters: {

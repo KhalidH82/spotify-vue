@@ -2,7 +2,7 @@
   <div class="player">
     <div class="player_body">
       <Sidebar />
-      <Body />
+      <Body spotify="{spotify}" />
     </div>
     <Footer />
   </div>

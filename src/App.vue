@@ -38,6 +38,10 @@ export default {
         console.log(playlists.items[0].name);
         store.commit("setPlaylists", playlists);
       });
+
+      spotify.getPlaylist("37i9dQZF1DXbwoaqxaoAVr").then((response) => {
+        store.commit("setRecent", response);
+      });
     }
   },
   computed: {},

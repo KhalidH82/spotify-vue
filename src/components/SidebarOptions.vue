@@ -4,7 +4,7 @@
     <h4 class="sidebar_title">{{title}}</h4>
   </div>
   <div class="sidebar_option" v-else>
-    <ul class="sidebar_playist">
+    <ul class="sidebar_playlist">
       <li
         class="sidebar_option sidebar_playlist_title"
         v-for="playlist in playLists.items"
@@ -46,7 +46,7 @@ export default {
   padding-top: 5px;
 }
 .sidebar_icon {
-  font-size: 1.5em;
+  font-size: 1em;
   padding: 0px 15px 0px 15px;
 }
 </style>
