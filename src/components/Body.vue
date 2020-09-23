@@ -2,7 +2,13 @@
   <div class="body">
     <Header spotify="{spotify}" />
     <div class="body_info">
-      <img src="recent_playlists.images.[0].url" alt />
+      <img
+        class="songRow__album"
+        v-for="s in recent_playlists.images"
+        :key="s.url"
+        :src="s.url"
+        alt
+      />
       <div class="body_infoText">
         <strong>PLAYLIST</strong>
         <h2>Discover Weekly</h2>
@@ -41,6 +47,11 @@ export default {
   color: white;
   padding: 30px;
   background: linear-gradient(rgb(91, 87, 115), rgb(0, 0, 1));
+  overflow-y: overlay;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
 }
 .body_info {
   display: flex;
@@ -51,6 +62,9 @@ export default {
   height: 10vw;
   margin: 0 20px;
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+.body_infoText {
+  flex: 1;
 }
 
 .body_infoText > h2 {
@@ -67,7 +81,7 @@ export default {
 }
 .body_icon {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
 .body_shuffle {
@@ -78,6 +92,7 @@ export default {
 .play {
   font-size: 4rem;
   margin-top: -8px;
+  color: #1de15e;
   :hover {
     transition: 100ms transform ease-in;
     transform: scale(1.08);
